@@ -1,7 +1,6 @@
 # Boutique Hotel Amenities UI
 
 Static, responsive amenities desk for hotel floor staff. Pure HTML5, vanilla CSS and JavaScript.
-
 ## Run
 - `npm install`
 - `npm test` runs the Vitest suite
