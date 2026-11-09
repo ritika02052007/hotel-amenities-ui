@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Digital amenities desk for boutique hotel floor staff.">
+  <title>Amenities Desk | Maison Alder</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <p class="brand"><span class="mark" aria-hidden="true">M</span>Maison Alder</p>
+      <nav aria-label="Primary">
+        <a href="#amenities">Amenities</a>
+        <a href="#request">Requests</a>
+        <a href="#my-requests">History</a>
+      </nav>
+      <div class="tools">
+        <span id="clock" class="clock"></span>
+        <button id="theme" class="btn btn-small" type="button" aria-label="Switch to light theme">Light mode</button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker">Floor staff desk</p>
+          <h1 id="hero-title">Every amenity, one tap away.</h1>
+          <p class="lead">Find what the hotel offers, check opening status and send guest requests to the right team. No paper, no spreadsheets.</p>
+          <div class="actions">
+            <a class="btn btn-light" href="#amenities">Browse amenities</a>
+            <a class="btn btn-ghost" href="#request">New request</a>
+          </div>
+        </div>
+        <dl class="stats" aria-live="polite">
+          <div><dt>Amenities</dt><dd id="stat-total">0</dd></div>
+          <div><dt>Open now</dt><dd id="stat-open">0</dd></div>
+          <div><dt>Active requests</dt><dd id="stat-active">0</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="amenities" class="section wrap" aria-labelledby="amenities-title">
+      <div class="head">
+        <h2 id="amenities-title">Amenities</h2>
+        <p class="meta">Search the hotel&rsquo;s services, filter by category or sort the list.</p>
+      </div>
+      <div class="toolbar">
+        <div class="search">
+          <label for="search">Search amenities</label>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="search" type="search" placeholder="Try spa or breakfast" autocomplete="off">
+        </div>
+        <div class="sort">
+          <label for="sort">Sort by</label>
+          <select id="sort"><option value="name">Name</option><option value="category">Category</option><option value="status">Availability</option></select>
+        </div>
+      </div>
+      <div id="chips" class="chips" role="group" aria-label="Filter by category"></div>
+      <p id="count" class="meta count" role="status" aria-live="polite"></p>
+      <div id="grid" class="grid" aria-busy="true"></div>
+    </section>
+
+    <div class="band">
+      <div class="wrap split">
+        <section id="request" class="panel" aria-labelledby="request-title">
+          <h2 id="request-title">Request an amenity</h2>
+          <p class="meta">The floor team receives requests as soon as you send them.</p>
+          <form id="request-form" novalidate>
+            <div class="row">
+              <div class="field">
+                <label for="name">Guest name</label>
+                <input id="name" name="name" type="text" autocomplete="off" aria-describedby="name-error">
+                <p id="name-error" class="error"></p>
+              </div>
+              <div class="field">
+                <label for="room">Room number</label>
+                <input id="room" name="room" type="text" inputmode="numeric" aria-describedby="room-error">
+                <p id="room-error" class="error"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="amenity">Amenity</label>
+                <select id="amenity" name="amenity" aria-describedby="amenity-error"><option value="">Choose an amenity</option></select>
+                <p id="amenity-error" class="error"></p>
+              </div>
+              <div class="field">
+                <label for="time">Preferred time</label>
+                <input id="time" name="time" type="time" aria-describedby="time-error">
+                <p id="time-error" class="error"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="notes">Notes (optional)</label>
+              <textarea id="notes" name="notes" rows="3" aria-describedby="notes-error"></textarea>
+              <p id="notes-error" class="error"></p>
+            </div>
+            <button class="btn btn-primary" type="submit">Send request</button>
+          </form>
+        </section>
+        <section id="my-requests" class="panel" aria-labelledby="my-title">
+          <div class="panel-head">
+            <h2 id="my-title">Request history</h2>
+            <button id="clear" class="btn btn-small" type="button" hidden>Clear completed</button>
+          </div>
+          <p class="meta">Requests move from pending to completed as the team works on them.</p>
+          <ul id="requests" class="requests"></ul>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="wrap"><p>Maison Alder amenities desk. Internal use only.</p></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
