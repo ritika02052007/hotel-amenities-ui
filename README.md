@@ -6,7 +6,6 @@ Static, responsive amenities desk for hotel floor staff. Pure HTML5, vanilla CSS
 - `npm test` runs the Vitest suite
 - `npm run lint` runs ESLint with zero warnings allowed
 - `npm start` serves the site locally (or open `index.html` through any static server)
-
 ## Test the edge cases
 - Search for `zzzz` to see the empty state
 - Add `?fail=1` to the URL to see the error state and Retry button
