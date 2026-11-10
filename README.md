@@ -10,6 +10,5 @@ Static, responsive amenities desk for hotel floor staff. Pure HTML5, vanilla CSS
 - Search for `zzzz` to see the empty state
 - Add `?fail=1` to the URL to see the error state and Retry button
 - Submit the empty form to see red field errors
-
 ## Deploy
 Push to GitHub, then import the repo in Vercel or Netlify. Leave the build command empty and publish the root directory.
